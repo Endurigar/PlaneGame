@@ -1,33 +1,37 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
+using Containers;
 using UnityEngine;
 
-public class Effects : MonoBehaviour
+namespace Effects
 {
-    [SerializeField] private ParticleSystem explosion;
-    [SerializeField] private ParticleSystem smoke;
-    
-    /// <summary>
-    /// Effects manager.
-    /// </summary>
-    private void Start()
+    public class Effects : MonoBehaviour
     {
-        AddListeners();
-    }
-    private void AddListeners()
-    {
-        ActionContainer.OnEffectsStateChanged += EffectsController;
-    }
-    private void EffectsController(bool check)
-    {
-        if(check)
+        [SerializeField] private ParticleSystem explosion;
+        [SerializeField] private ParticleSystem smoke;
+
+        /// <summary>
+        ///     Effects manager.
+        /// </summary>
+        private void Start()
         {
-            explosion.Play();
-            smoke.Play();
-            return;
+            AddListeners();
         }
-        explosion.Stop();
-        smoke.Stop();
+
+        private void AddListeners()
+        {
+            ActionContainer.OnEffectsStateChanged += EffectsController;
+        }
+
+        private void EffectsController(bool check)
+        {
+            if (check)
+            {
+                explosion.Play();
+                smoke.Play();
+                return;
+            }
+
+            explosion.Stop();
+            smoke.Stop();
+        }
     }
 }

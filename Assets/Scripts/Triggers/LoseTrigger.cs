@@ -4,13 +4,17 @@ using System.IO;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class LoseTrigger : MonoBehaviour
+namespace Triggers
 {
-    /// <summary>
-    /// Trigger lose on collision.
-    /// </summary>
-    private void OnCollisionEnter(Collision collision)
+    public class LoseTrigger : MonoBehaviour
     {
-        ActionContainer.OnHit();
+        /// <summary>
+        /// Trigger lose on collision.
+        /// </summary>
+        private void OnCollisionEnter(Collision collision)
+        {
+            Containers.ActionContainer.OnHit();
+        }
     }
 }
+

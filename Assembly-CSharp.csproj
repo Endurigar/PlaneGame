@@ -48,9 +48,8 @@
      <Compile Include="Assets\Scripts\Containers\ActionContainer.cs" />
      <Compile Include="Assets\Scripts\UI\UiController.cs" />
      <Compile Include="Assets\Scripts\Triggers\LoseTrigger.cs" />
-     <Compile Include="Assets\Scripts\Player\PlayerControllerX.cs" />
+     <Compile Include="Assets\Scripts\Player\PlayerControl.cs" />
      <Compile Include="Assets\Scripts\Sounds\SoundManager.cs" />
-     <Compile Include="Assets\MyAssets\Travis Game Assets\Hit Impact Effects\Demo Scene\Scripts\HitImpactEffectsPreview.cs" />
      <Compile Include="Assets\Scripts\UI\Starter.cs" />
      <Compile Include="Assets\Scripts\UI\Points.cs" />
      <Compile Include="Assets\Scripts\Camera\CameraHolder.cs" />
@@ -107,7 +106,6 @@
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF SSD.shader" />
      <Folder Include="Assets\TextMesh Pro\Resources" />
      <Folder Include="Assets\MyAssets\FigmaToUnityImporter-main\Assets\TextMesh Pro\Fonts" />
-     <Folder Include="Assets\MyAssets\Travis Game Assets\Hit Impact Effects\Demo Scene\Scripts" />
      <Folder Include="Assets\Scripts\UI" />
      <None Include="Assets\MyAssets\FigmaToUnityImporter-main\Assets\TextMesh Pro\Resources\Shaders\TMP_SDF-Mobile.shader" />
      <Folder Include="Assets\MyAssets\FigmaToUnityImporter-main\ProjectSettings" />

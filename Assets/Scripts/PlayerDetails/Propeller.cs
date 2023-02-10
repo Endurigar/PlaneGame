@@ -2,31 +2,35 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Propeller : MonoBehaviour
+namespace PlayerDetails
 {
-    private bool canMove = false;
-    private float propellerSpeed = 20f;
-    
-    /// <summary>
-    /// Propeller settings and its functionality.
-    /// </summary>
-    private void Start()
+    public class Propeller : MonoBehaviour
     {
-        AddListeners();
-    }
-    private void Update()
-    {
-        if(canMove == true)
+        private bool canMove = false;
+        private float propellerSpeed = 20f;
+        
+        /// <summary>
+        /// Propeller settings and its functionality.
+        /// </summary>
+        private void Start()
         {
-        var currentEuler = transform.localEulerAngles;
-        currentEuler.z += propellerSpeed;
-        transform.localEulerAngles= currentEuler;
+            AddListeners();
+        }
+        private void Update()
+        {
+            if(canMove == true)
+            {
+            var currentEuler = transform.localEulerAngles;
+            currentEuler.z += propellerSpeed;
+            transform.localEulerAngles= currentEuler;
+            }
+        }
+        private void AddListeners()
+        {
+            Containers.ActionContainer.OnMove += () => canMove = true;
+            Containers.ActionContainer.OnRestart += () => canMove = false;
+            Containers.ActionContainer.OnHit += () => canMove = false;
         }
     }
-    private void AddListeners()
-    {
-        ActionContainer.OnMove += () => canMove = true;
-        ActionContainer.OnRestart += () => canMove = false;
-        ActionContainer.OnHit += () => canMove = false;
-    }
 }
+
